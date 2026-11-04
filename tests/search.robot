@@ -2,7 +2,7 @@
 Documentation    Finding products by their name.
 Metadata         Owner    Team Catalog
 
-Resource         ../resources/shop.resource
+Resource         shop.resource
 
 Test Template    Search Should Find
 

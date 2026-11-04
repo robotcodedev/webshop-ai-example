@@ -2,8 +2,8 @@
 Documentation    Placing orders.
 Metadata         Owner    Team Checkout
 
-Resource         ../resources/shop.resource
-Resource         ../resources/orders.resource
+Resource         shop.resource
+Resource         orders.resource
 
 Test Setup       Open Shop As    alice
 

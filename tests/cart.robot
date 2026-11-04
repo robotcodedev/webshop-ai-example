@@ -2,8 +2,8 @@
 Documentation    Filling and emptying the cart.
 Metadata         Owner    Team Checkout
 
-Resource         ../resources/shop.resource
-Resource         ../resources/cart.resource
+Resource         shop.resource
+Resource         cart.resource
 
 Test Setup       Open Shop As    alice
 Test Teardown    Empty Cart

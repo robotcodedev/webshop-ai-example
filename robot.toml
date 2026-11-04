@@ -1,5 +1,5 @@
 paths = ["tests"]
-python-path = ["libraries"]
+python-path = ["libraries", "resources"]
 output-dir = "results"
 
 [variables]

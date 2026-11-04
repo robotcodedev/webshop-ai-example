@@ -2,7 +2,7 @@
 Documentation    Logging in to the shop and out again.
 Metadata         Owner    Team Accounts
 
-Resource         ../resources/shop.resource
+Resource         shop.resource
 
 Test Tags        login
 
