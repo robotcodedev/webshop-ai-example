@@ -1,0 +1,10 @@
+[project]
+name = "webshop-ai-example"
+version = "0.1.0"
+description = "Robot Framework tests for a small web shop, the example project of RobotCode's AI agents guide"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["robotframework>=7.5", "robotcode[all]>=2.9.0.dev0", "robotframework-browser>=20.6.0"]
+
+[tool.uv]
+package = false

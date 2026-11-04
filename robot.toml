@@ -1,0 +1,19 @@
+paths = ["tests"]
+python-path = ["libraries"]
+output-dir = "results"
+
+[variables]
+BASE_URL = "http://localhost:8080"
+BROWSER = "chromium"
+
+[profiles.dev]
+description = "Local shop in Firefox"
+extend-variables = { BROWSER = "firefox" }
+
+[profiles.ci]
+description = "Staging shop"
+
+[profiles.ci.extend-variables]
+BASE_URL = "https://staging.shop.example"
+
+

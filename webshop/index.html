@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Demo Web Shop</title>
+  <style>
+    body { margin: 0; font: 16px/1.5 system-ui, sans-serif; background: #f6f7f9; color: #1d2433; }
+    header { padding: 1rem 2rem; background: #0b7285; color: #fff; font-weight: 600; font-size: 1.25rem; }
+    main { max-width: 40rem; margin: 2rem auto; padding: 0 1rem; }
+    input[type=search] { width: 100%; box-sizing: border-box; padding: .6rem .8rem; font: inherit; border: 1px solid #c6ccd6; border-radius: .5rem; }
+    ul { padding: 0; list-style: none; }
+    .product { display: flex; justify-content: space-between; padding: .6rem .8rem; margin-top: .5rem; background: #fff; border-radius: .5rem; }
+    .price { color: #0b7285; font-weight: 600; }
+    #message { color: #8a3b12; }
+  </style>
+</head>
+<body>
+  <header>Demo Web Shop</header>
+  <main>
+    <input type="search" aria-label="Search products" placeholder="Search products">
+    <ul id="results"></ul>
+    <p id="message" hidden>No products found</p>
+  </main>
+  <script>
+    const products = { beans: 9.9, coffee: 4.5, mug: 12, tea: 3.2 };
+    const search = document.querySelector("input[type=search]");
+    search.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") return;
+      const text = search.value.toLowerCase();
+      const found = Object.keys(products).filter((name) => name.includes(text));
+      document.getElementById("results").innerHTML = found
+        .map((name) => `<li class="product"><span class="name">${name}</span><span class="price">${products[name].toFixed(2)} €</span></li>`)
+        .join("");
+      document.getElementById("message").hidden = found.length > 0;
+    });
+  </script>
+</body>
+</html>
