@@ -1,6 +1,6 @@
 # Web shop acceptance tests
 
-The example project of [RobotCode's AI agents guide](https://robotcode.io/guides/ai-agents/): Robot Framework tests for a small web shop, in the state the guide's sessions start from. Some things in it are wrong on purpose, because the sessions find them.
+The example project of [RobotCode's AI agents guide](https://robotcode.io/guides/ai-agents/): Robot Framework tests for a small web shop. Some things in it are wrong on purpose, because the guide's tutorial finds them with an agent.
 
 ## Setup
 

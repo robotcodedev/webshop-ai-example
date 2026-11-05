@@ -1,5 +1,7 @@
 """Keywords that talk to the demo web shop."""
 
+import random
+
 from robot.api import logger
 from robot.api.deco import keyword, library
 
@@ -19,6 +21,7 @@ class ShopLibrary:
         self._cart: dict[str, int] = {}
         self._stock = {"coffee": 100, "tea": 50, "beans": 20, "mug": 0}
         self._orders: dict[str, str] = {}
+        self._confirmed: set[str] = set()
 
     @keyword
     def log_in(self, user: str, password: str) -> None:
@@ -82,6 +85,11 @@ class ShopLibrary:
     @keyword
     def order_status(self, order: str) -> str:
         """Returns the status of ``order``: ``placed`` or ``express``."""
+        # The warehouse confirms an express order a moment later.
+        if self._orders[order] == "express" and order not in self._confirmed:
+            self._confirmed.add(order)
+            if random.random() < 0.5:
+                return "placed"
         return self._orders[order]
 
     @keyword
